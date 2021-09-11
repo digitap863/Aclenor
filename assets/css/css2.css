@@ -505,7 +505,19 @@
   
 }
 
+@media only screen and (min-width: 768px) {
+.imgwdth
+{
+    height: 828px;
+}
+}
 
+@media only screen and (max-width: 768px) {
+.imgwdth
+{
+    height: 478px;
+}
+}
 
 
 
