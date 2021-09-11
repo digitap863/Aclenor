@@ -365,7 +365,9 @@
 
 
 
-
+a {
+    color: #0e76a6 !important;
+  }
 
 
 
@@ -387,7 +389,7 @@
     -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    background-color: rgb(9 93 197);
+    background-color: rgb(9 115 163);
     width: 70px;
     height: 70px;
     -webkit-animation: zcwmini2 1.5s 0s ease-out infinite;
