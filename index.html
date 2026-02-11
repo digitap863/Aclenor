@@ -31,6 +31,36 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="assets/css/css2.css">
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style>
+/* Override Tailwind's hidden class inside the mobile slide-out nav */
+.mobile-nav__container .main-menu__list {
+    display: block !important;
+}
+.mobile-nav__container .main-menu__list li {
+    display: block !important;
+}
+.mobile-nav__container .main-menu__list li a {
+    color: #fff !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+    background: none !important;
+    border: none !important;
+    letter-spacing: normal !important;
+}
+.mobile-nav__container .main-menu__list li a::after {
+    display: none !important;
+}
+.mobile-nav__container .logo-box {
+    display: none !important;
+}
+/* Desktop: full-height video banner */
+@media (min-width: 1024px) {
+    .main-slider {
+        height: 90vh !important;
+        min-height: 600px !important;
+    }
+}
+</style>
 </head>
 <body>
     <div class="preloader">
@@ -47,12 +77,12 @@
                         </div>
                    </div>
                         <nav class="main-menu bg-white shadow-md relative z-50">
-                                    <div class="container mx-auto ">
-                                            <div class=" flex items-center justify-between ">
-                                            <a href="index.html" aria-label="logo image" class="flex-shrink-0"><img src="assets/images/logoo.jpeg" width="200" alt="" class="h-auto max-w-[200px] lg:max-w-[300px]"></a>
-                                            <span class="fa fa-bars mobile-nav__toggler text-2xl text-[#1f4e3d] cursor-pointer lg:hidden"></span>
+                                    <div class="container mx-auto">
+                                            <div class="logo-box flex items-center justify-between py-3">
+                                            <a href="index.html" aria-label="logo image" class="flex-shrink-0"><img src="assets/images/logoo.jpeg" width="200" alt="" class="h-auto max-w-[160px] lg:max-w-[300px]"></a>
+                                            <span class="fa fa-bars mobile-nav__toggler text-2xl text-[#1f4e3d] cursor-pointer block xl:hidden"></span>
                                             </div>
-                                             <ul class="main-menu__list flex items-center gap-0">
+                                             <ul class="main-menu__list hidden xl:flex items-center gap-0">
                                                 <li class="group">
                                                     <a href="#about" class="block px-1 py-2 text-sm font-semibold tracking-wide text-[#1f4e3d] hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full">ABOUT US</a>
                                                 </li>
@@ -86,7 +116,7 @@
                 <div class="sticky-header__content"></div>
                 </div>
               
-<section class="main-slider" style="position: relative; height: 90vh; min-height: 600px; overflow: hidden; ">
+<section class="main-slider" style="position: relative; height: auto; min-height: 300px; overflow: hidden; ">
 <!-- Video Background -->
 <video autoplay muted loop playsinline preload="auto" id="heroVideo" style="position: absolute; top: 50%; left: 50%; min-width: 100vw; min-height: 100vh; width: auto; height: auto; transform: translate(-50%, -50%) translateZ(0); will-change: transform; object-fit: cover; -webkit-backface-visibility: hidden; backface-visibility: hidden;">
   <source src="assets/images/newimages/vdocargo.mp4" type="video/mp4">
