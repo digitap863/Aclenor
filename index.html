@@ -32,22 +32,23 @@
 <link rel="stylesheet" href="assets/css/css2.css">
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <style>
-/* Override Tailwind's hidden class inside the mobile slide-out nav */
-.mobile-nav__container .main-menu__list {
+/* Mobile Nav Style Overrides - Only inside the phone drawer */
+.mobile-nav__container ul {
     display: block !important;
 }
-.mobile-nav__container .main-menu__list li {
+.mobile-nav__container ul li {
     display: block !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-.mobile-nav__container .main-menu__list li a {
+.mobile-nav__container ul li a {
     color: #fff !important;
-    padding: 0 10px !important;
+    padding: 15px 20px !important;
     font-size: 14px !important;
-    background: none !important;
-    border: none !important;
-    letter-spacing: normal !important;
+    font-weight: 700 !important;
+    display: block !important;
+    text-decoration: none !important;
 }
-.mobile-nav__container .main-menu__list li a::after {
+.mobile-nav__container ul li a::after {
     display: none !important;
 }
 .mobile-nav__container .logo-box {
@@ -167,6 +168,69 @@ p {
 }
 
 
+/* Floating Quote Button */
+#floating-quote {
+    position: fixed;
+    right: 50px;
+    bottom: 200px;
+    z-index: 99990;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+#quoteMain {
+    background: linear-gradient(135deg, #2d8f6f 0%, #3a9bd5 100%);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 2px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+#quoteMain i {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+#quoteMain:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+#quoteMain:hover i {
+    transform: rotate(15deg);
+}
+/* Tooltip-like label */
+#quoteMain::after {
+    content: "Request a Quote";
+    position: absolute;
+    right: 70px;
+    background: #1f4e3d;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+#floating-quote:hover #quoteMain::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    #floating-quote {
+        right: 30px;
+        bottom: 200px;
+    }
+}
 </style>
 </head>
 <body>
@@ -211,8 +275,8 @@ p {
                                                 </li>
                                                 <li class="group relative">
                                                     <a href="#crossborder" class="block px-1 py-4 text-[15px] !font-bold tracking-normal leading-tight  text-[#1f4e3d] hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[3px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full">RESOURCES</a>
-                                                    <ul class="absolute top-[100%] left-0 min-w-[200px] bg-white shadow-xl py-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 z-[100] border-t-4 border-[#f7c35f]">
-                                                        <li><a href="assets/images/newimages/Incoterms2026.pdf" target="_blank" class="block px-5 py-3 text-sm font-bold text-[#0973a2] hover:bg-[#f7f9fb] hover:text-[#f7c35f] uppercase transition-all duration-200">INCOTERMS</a></li>
+                                                    <ul class="xl:absolute static top-full left-0 xl:min-w-[200px] xl:bg-white bg-black/5 xl:shadow-xl shadow-none py-2 hidden group-hover:block z-[100] xl:border-t-4 border-none border-[#f7c35f] mt-0">
+                                                        <li><a href="assets/images/newimages/Incoterms2026.pdf" target="_blank" class="block px-5 py-3 text-sm font-bold xl:text-[#0973a2] text-white/70 hover:bg-[#f7f9fb] hover:text-[#f7c35f] uppercase transition-all duration-200">INCOTERMS</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="group">
@@ -304,7 +368,7 @@ p {
                     <p style="text-align: justify; color: #0973a2;">ECTRADE EUROPE is a division of ECTRADE B.V., a Netherlands-based company providing reliable transport, freight, and supply chain solutions across Europe and international markets. </p>
                     <p style="text-align: justify; color: #0973a2;">As a division of ECTRADE B.V., we combine strong logistics capabilities with overseas trade experience, supporting businesses with efficient cargo movement and cross-border trade operations. Our core focus is logistics and freight supported by global trade expertise.</p>
 
-                    <h4 style="color: #1f4e3d; margin-top: 20px; font-family: 'Inter', sans-serif; font-weight: 700;">WHY ECTRADE EUROPE</h4>
+                    <h4 style="color: #1f4e3d; margin-top: 20px; font-family: 'Inter', sans-serif; font-weight: 700;">WHY ECTRADE EUROPE ?</h4>
                     <ul style="color: #0973a2; list-style: disc; margin-left: 20px;">
                        	<li>Global Network, Local Expertise.</li>
                         <li>End-to-End Transportation Solutions.</li>
@@ -312,13 +376,13 @@ p {
                         <li>Customs & Compliance Expertise.</li>
                         <li>Tailored Logistics Solutions.</li>
                         <li>Experienced & Professional Team.</li>
-                        <li>A Partner You Can Trust</li>
+                        <li>A Partner You Can Trust.</li>
 
                     </ul>
                 </div>
                 <div class="col-lg-6 pt-10">
                     <div class="feature-one__image" data-aos="fade-left" data-aos-duration="1000">
-                        <img style="height: 680px; width: 100%; object-fit: cover; border-radius: 10px;" src="assets/images/newimages/shipp.jpeg" alt="About ECTRADE EUROPE">
+                        <img style="height: 590px; width: 100%; object-fit: cover; border-radius: 10px;" src="assets/images/newimages/shipp.jpeg" alt="About ECTRADE EUROPE">
                     </div>
                 </div>
             </div>
@@ -354,7 +418,7 @@ p {
 <section id="team" style="background-color: #f7f9fb; padding: 80px 0;">
     <div class="container">
         <div class="text-center mb-5" data-aos="fade-down" data-aos-duration="800">
-            <h2 class="font-weight-bold" style="color: #1f4e3d; font-size: 2.2rem;">MEET THE <span style="color: #1f4e3d;">TEAM</span></h2>
+            <h2 class="font-weight-bold" style="color: #1f4e3d; font-size: 2.2rem;">OUR <span style="color: #1f4e3d;">TEAM</span></h2>
         </div>
 
         <!-- Ashish Uppal — Featured Card with Photo -->
@@ -465,7 +529,7 @@ font-weight: 800;">Expert Team : </a> <a style="color: #0973a2; text-align: just
         <div class="block-title text-left pb-20">
             <h3 class="section-title-main" data-aos="fade-down" data-aos-duration="800">OUR SERVICES</h3>
         </div>
-            <p class=" absolute top-26 left-5" style="color: #0b3d66;" data-aos="fade-up" data-aos-duration="800">We provide comprehensive logistics and supply chain solutions tailored to your business needs, ensuring efficiency and reliability across all touchpoints.</p>
+            <p class=" absolute top-26 left-5" style="color: #000;" data-aos="fade-up" data-aos-duration="800">We provide comprehensive logistics and supply chain solutions tailored to your business needs, ensuring efficiency and reliability across all touchpoints.</p>
 
 
         <div class="service-list-rows mt-5">
@@ -793,6 +857,17 @@ font-weight: 800;">Expert Team : </a> <a style="color: #0973a2; text-align: just
                             <p class="mb-0" style="color: rgba(255,255,255,0.85); font-size: 15px; line-height: 1.7;">Kraijenhoffstraat 137 A,<br>1018RG, Amsterdam,<br>The Netherlands.</p>
                         </div>
                     </div>
+
+                    <!-- Website Link -->
+                    <div class="d-flex mb-4">
+                        <div class="d-flex align-items-center justify-content-center rounded-circle mr-3 flex-shrink-0" style="width: 50px; height: 50px; background: rgba(255,255,255,0.15);">
+                            <i class="fa fa-globe text-white" style="font-size: 22px;"></i>
+                        </div>
+                        <div>
+                            <h6 class="font-weight-bold mb-1" style="color: #fff;">Website</h6>
+                            <p class="mb-0"><a href="http://www.ectradebv.com/" target="_blank" style="color: #fff !important; font-size: 15px;">www.ectradebv.com</a></p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Right: Inquiry Form -->
@@ -844,6 +919,13 @@ font-weight: 800;">Expert Team : </a> <a style="color: #0973a2; text-align: just
 </div>
 </a>
 
+<!-- Floating Request a Quote Button -->
+<a href="#contact" id="floating-quote">
+    <div id="quoteMain">
+        <i class="fa fa-paper-plane"></i>
+    </div>
+</a>
+
 
 
 
@@ -876,8 +958,8 @@ font-weight: 800;">Expert Team : </a> <a style="color: #0973a2; text-align: just
             </div>
             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
                 <h3 class="footer-widget__title" style="text-decoration: underline; margin-bottom: 20px;">OFFICE LOCATION</h3>
-                <div class="footer-map" style="border-radius: 10px; overflow: hidden; height: 200px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.0704311007125!2d4.929339000000001!3d52.3691429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c60904c9cd6c75%3A0x4612c9fbf7d48343!2sEasystart%20Office%20%7C%20Virtual%20Office%20Amsterdam%20%7C%20Register%20Business%20Address!5e0!3m2!1sen!2sin!4v1771233413188!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="footer-map" style="border-radius: 10px; overflow: hidden; height: 200px;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.091718392911!2d4.928699!3d52.368756899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6090c6b465635%3A0x3adcb1ab94a06bb3!2s1018%20RG%20Amsterdam%2C%20Netherlands!5e0!3m2!1sen!2sin!4v1771241846181!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <p style="color: #fff; font-size: 13px; margin-top: 10px;"><i class="fa fa-map-marker" style="color: #f7c35f; margin-right: 5px;"></i> Kraijenhoffstraat 137A, 1018RG Amsterdam</p>
             </div>
