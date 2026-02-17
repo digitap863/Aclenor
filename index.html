@@ -180,9 +180,10 @@ p {
 #quoteMain {
     background: linear-gradient(135deg, #2d8f6f 0%, #3a9bd5 100%);
     color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    width: auto;
+    height: 50px;
+    padding: 0 25px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -191,38 +192,14 @@ p {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-}
-#quoteMain i {
-    font-size: 24px;
-    transition: transform 0.3s ease;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 #quoteMain:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-}
-#quoteMain:hover i {
-    transform: rotate(15deg);
-}
-/* Tooltip-like label */
-#quoteMain::after {
-    content: "Request a Quote";
-    position: absolute;
-    right: 70px;
-    background: #1f4e3d;
-    color: white;
-    padding: 5px 12px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: 600;
-    white-space: nowrap;
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: all 0.3s ease;
-    pointer-events: none;
-}
-#floating-quote:hover #quoteMain::after {
-    opacity: 1;
-    transform: translateX(0);
 }
 
 @media (max-width: 768px) {
@@ -260,36 +237,36 @@ p {
                         <nav class="main-menu bg-white shadow-md relative z-50">
                                     <div class="container mx-auto flex items-center justify-between">
                                             <div class="logo-box flex items-center py-1">
-                                            <a href="index.html" aria-label="logo image" class="flex-shrink-0"><img src="assets/images/logoo.jpeg" width="270" alt="" class="h-auto max-w-[180px] lg:max-w-[270px]"></a>
+                                            <a href="index.html" aria-label="logo image" class="flex-shrink-0"><img src="assets/images/logoo.jpeg" width="160" alt="" class="h-auto max-w-[130px] lg:max-w-[160px]"></a>
                                             <span class="fa fa-bars mobile-nav__toggler text-2xl text-[#1f4e3d] cursor-pointer block lg:hidden ml-4"></span>
                                             </div>
                                              <ul class="hidden lg:flex items-center justify-center gap-6 ml-10">
                                                 <li class="group">
-                                                    <a href="#about" class="block px-1 py-4 text-[15px] !font-bold  text-[#1f4e3d] hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full leading-tight ">ABOUT US</a>
+                                                    <a href="#about" class="block px-1 py-4 text-[13px] whitespace-nowrap !font-bold  text-[#1f4e3d] hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full leading-tight ">ABOUT US</a>
                                                 </li>
                                                 <li class="group">
-                                                    <a href="#services" class="block px-1 py-4 text-[15px] !font-bold tracking-tight leading-tight  text-[#1f4e3d] hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[3px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full">OUR SERVICE</a>
+                                                    <a href="#services" class="block px-1 py-4 text-[13px] whitespace-nowrap !font-bold tracking-tight leading-tight  text-[#1f4e3d] hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[3px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full">OUR SERVICES</a>
                                                 </li>
                                                 <li class="group">
-                                                    <a href="#global" class="block px-1 py-4 text-[15px] !font-bold tracking-normal leading-tight  text-[#1f4e3d] hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[3px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full">GLOBAL MARKET</a>
+                                                    <a href="#global" class="block px-1 py-4 text-[13px] whitespace-nowrap !font-bold tracking-normal leading-tight  text-[#1f4e3d] hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[3px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full">GLOBAL MARKET</a>
                                                 </li>
                                                 <li class="group relative">
-                                                    <a href="#crossborder" class="block px-1 py-4 text-[15px] !font-bold tracking-normal leading-tight  text-[#1f4e3d] hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[3px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full">RESOURCES</a>
+                                                    <a href="#crossborder" class="block px-1 py-4 text-[13px] whitespace-nowrap !font-bold tracking-normal leading-tight  text-[#1f4e3d] hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[3px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full">RESOURCES</a>
                                                     <ul class="lg:absolute static top-full left-0 lg:min-w-[200px] lg:bg-white bg-black/5 lg:shadow-xl shadow-none py-2 hidden group-hover:block z-[100] lg:border-t-4 border-none border-[#f7c35f] mt-0">
                                                         <li><a href="assets/images/newimages/Incoterms2026.pdf" target="_blank" class="block px-5 py-3 text-sm font-bold lg:text-[#0973a2] text-white/70 hover:bg-[#f7f9fb] hover:text-[#f7c35f] uppercase transition-all duration-200">INCOTERMS</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="group">
-                                                    <a href="#covid" class="block px-1 py-4 text-[15px] !font-bold tracking-normal leading-tight text-[#1f4e3d] hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[3px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full">COVID-19 RESPONSE</a>
+                                                    <a href="#covid" class="block px-1 py-4 text-[13px] whitespace-nowrap !font-bold tracking-normal leading-tight text-[#1f4e3d] hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[3px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full">COVID-19 RESPONSE</a>
                                                 </li>
                                                 <li class="group">
-                                                    <a href="#career" class="block px-1 py-4 text-[15px] !font-bold tracking-normal text-[#1f4e3d] leading-tight hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[3px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full">CAREERS</a>
+                                                    <a href="#career" class="block px-1 py-4 text-[13px] whitespace-nowrap !font-bold tracking-normal text-[#1f4e3d] leading-tight hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[3px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full">CAREERS</a>
                                                 </li>
                                                 <li class="group">
-                                                    <a href="#contact" class="block px-1 py-4 text-[15px] !font-bold tracking-normal leading-tight  text-[#1f4e3d] hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full">CONTACT</a>
+                                                    <a href="#contact" class="block px-1 py-4 text-[13px] whitespace-nowrap !font-bold tracking-normal leading-tight  text-[#1f4e3d] hover:text-[#f7c35f] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-[#f7c35f] after:transition-all after:duration-300 group-hover:after:w-full">CONTACT</a>
                                                 </li>
                                                 <li class="ml-4">
-                                                    <a href="#contact" class="flex items-center gap-4 px-6 py-2 text-sm !font-bold leading-tight  tracking-normal text-white rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300" style="background: linear-gradient(135deg, #2d8f6f, #3a9bd5); border: 2px solid rgba(255,255,255,0.3);"><i class="fa fa-calculator"></i> Request a Quote</a>
+                                                    <a href="#contact" class="flex items-center uppercase gap-4 px-6 py-2 text-sm !font-bold leading-tight  tracking-normal text-white rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300" style="background: linear-gradient(135deg, #2d8f6f, #3a9bd5); border: 2px solid rgba(255,255,255,0.3);"><i class="fa fa-calculator"></i> Request a Quote</a>
                                                 </li>
                                                 </ul>
                                     </div>
@@ -526,10 +503,10 @@ font-weight: 800;">Expert Team : </a> <a style="color: #0973a2; text-align: just
 
 <section class="service-two py-5" id="services" style="background-color: #f7f9fb;">
     <div class="container py-lg-5 relative ">
-        <div class="block-title text-left pb-20">
+        <div class="block-title text-left pb-22">
             <h3 class="section-title-main" data-aos="fade-down" data-aos-duration="800">OUR SERVICES</h3>
         </div>
-            <p class=" absolute top-26 left-5" style="color: #000;" data-aos="fade-up" data-aos-duration="800">We provide comprehensive logistics and supply chain solutions tailored to your business needs, ensuring efficiency and reliability across all touchpoints.</p>
+            <p class=" absolute md:top-26 top-15 left-5  " style="color: #0973a2;" data-aos="fade-up" data-aos-duration="800">We provide comprehensive logistics and supply chain solutions tailored to your business needs, ensuring efficiency and reliability across all touchpoints.</p>
 
 
         <div class="service-list-rows mt-5">
@@ -779,7 +756,7 @@ font-weight: 800;">Expert Team : </a> <a style="color: #0973a2; text-align: just
                         <h3 class="section-title-main">CAREERS</h3>
                     </div>
                     <div class="feature-one__summery">
-                        <p style="color: #0973a2; text-align: justify;">We provide stimulating opportunities, an equal platform for career growth and a balanced work environment for all our employees. Individuals are integrated into dynamic teams with a focus on achieving common goals, giving ECTRADE EUROPE a competitive advantage in their journey to become a leader in the global Market. Please send your resume to operations@ectradebv.com.</p>
+                        <p style="color: #0973a2; text-align: justify;">We provide stimulating opportunities, an equal platform for career growth and a balanced work environment for all our employees. Individuals are integrated into dynamic teams with a focus on achieving common goals, giving ECTRADE EUROPE a competitive advantage in their journey to become a leader in the global Market. Please send your resume to <a href="mailto:operations@ectradebv.com" style="color: inherit; text-decoration: underline;">operations@ectradebv.com</a> .</p>
                     </div>
                 </div>
             </div>
@@ -922,7 +899,7 @@ font-weight: 800;">Expert Team : </a> <a style="color: #0973a2; text-align: just
 <!-- Floating Request a Quote Button -->
 <a href="#contact" id="floating-quote">
     <div id="quoteMain">
-        <i class="fa fa-paper-plane"></i>
+        Request a Quote
     </div>
 </a>
 
@@ -948,7 +925,7 @@ font-weight: 800;">Expert Team : </a> <a style="color: #0973a2; text-align: just
                     <h3 class="footer-widget__title" style="text-decoration: underline;">QUICK LINKS</h3>
                     <ul class="list-unstyled footer-widget__links-list" style="margin-top: 0px;">
                         <li><a href="#about" style="color: #fff !important; transition: color 0.3s;">ABOUT US</a></li>
-                        <li><a href="#services" style="color: #fff !important; transition: color 0.3s;">OUR SERVICE</a></li>
+                        <li><a href="#services" style="color: #fff !important; transition: color 0.3s;">OUR SERVICES</a></li>
                         <li><a href="#global" style="color: #fff !important; transition: color 0.3s;">GLOBAL MARKET</a></li>
                         <li><a href="#crossborder" style="color: #fff !important; transition: color 0.3s;">RESOURCES</a></li>
                         <li><a href="#covid" style="color: #fff !important; transition: color 0.3s;">COVID-19 RESPONSE</a></li>
